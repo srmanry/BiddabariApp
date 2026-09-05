@@ -1,0 +1,13 @@
+import 'package:dio/dio.dart';
+
+class ApiClient {
+  ApiClient._();
+
+  static final Dio dio = Dio(
+    BaseOptions(
+      baseUrl: 'https://api.biddabari.com/api/v1/',
+      connectTimeout: const Duration(seconds: 15),
+      receiveTimeout: const Duration(seconds: 15),
+    ),
+  );
+}
