@@ -75,17 +75,7 @@ class CourseCard extends StatelessWidget {
                       height: 1.3,
                     ),
                   ),
-                  const SizedBox(height: 3),
-                  Text(
-                    course.subTitle,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                      fontSize: 12.5,
-                      color: AppColors.textSecondary,
-                    ),
-                  ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 6),
                   Row(
                     children: [
                       if (hasDiscount) ...[
@@ -142,11 +132,10 @@ class CourseCard extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     height: 42,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.cta,
-                        foregroundColor: Colors.white,
-                        elevation: 0,
+                    child: OutlinedButton(
+                      style: OutlinedButton.styleFrom(
+                        foregroundColor: AppColors.primary,
+                        side: const BorderSide(color: AppColors.primary),
                         padding: EdgeInsets.zero,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
@@ -155,7 +144,7 @@ class CourseCard extends StatelessWidget {
                       onPressed: () => Get.toNamed(
                           '${AppRoutes.courseDetails}/${course.id}'),
                       child: const Text(
-                        'কোর্সটি কিনুন',
+                        'বিস্তারিত দেখুন',
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 14,
@@ -172,6 +161,7 @@ class CourseCard extends StatelessWidget {
     );
   }
 }
+
 
 class _InfoChip extends StatelessWidget {
   final IconData icon;
